@@ -12,9 +12,13 @@ var palavras = {
 
 
 const escolherPalavras = (obj) => {
-    for(var i = 0; i < obj.length; i++){
+    var categorias = []
 
+    for(var chave in obj){
+        console.log(chave)
+        categorias.push(chave)
     }
+    console.log(obj[categorias[0]])
 }
 
-console.log(palavras.frutas.lista.length)
+escolherPalavras(palavras)
