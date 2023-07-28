@@ -1,23 +1,13 @@
-const palavras = {
-    frutas: {
-        lista: ["Limão", "Laranja", "Tomate", "Uva", "Melancia", "Fruta-Pão"],
-        dica: "A dica é uma fruta!"
-    },
+import palavras from "./palavras.js";
 
-    carros: {
-        lista: ["Corsel", "Corolla", "Fusca", "Chevette"],
-        dica: "A dica é um tipo de carro!"
-    }
-}
-
+var palavraAleatoria = "";
+var dica = "";
 
 const escolherPalavras = (obj) => {
     var categorias = [];
     var indiceCategoria = 0;
     var indiceLista = 0;
     var lista;
-    var palavraAleatoria = "";
-    var dica = "";
 
     // Percorre o objeto e adiciona todas as propriedades em formato de string, na array categorias 
     for (var prop in obj) {

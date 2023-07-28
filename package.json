@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "jogo-da-forca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wander06/Jogo-da-Forca.git"
+  },
+  "author": "Wander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wander06/Jogo-da-Forca/issues"
+  },
+  "homepage": "https://github.com/Wander06/Jogo-da-Forca#readme"
+}
