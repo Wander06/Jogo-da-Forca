@@ -2,7 +2,9 @@ import palavras from "./palavras.js";
 
 var palavraAleatoria = "";
 var dica = "";
+var arrayPalavraOcultada = [];
 var palavraOcultada = "";
+var letraUsuario = "";
 
 const escolherPalavras = (obj) => {
     var categorias = [];
@@ -35,23 +37,58 @@ const escolherPalavras = (obj) => {
 }
 
 const ocultarPalavra = () =>{
-    if(palavraOcultada !== ""){
-        palavraOcultada = ""
+    if(arrayPalavraOcultada !== []){
+        arrayPalavraOcultada = []
     }
     for(var i = 0; i < palavraAleatoria.length; i++){
-        palavraOcultada += "-";
+        arrayPalavraOcultada.push("-")
+        palavraOcultada += "-"
     }
-    console.log(palavraOcultada);
+    console.log(arrayPalavraOcultada);
+}
+
+const verificarLetras = () => {
+    
+    if(palavraAleatoria.length == arrayPalavraOcultada.length){
+        for(var i = 0; i < palavraAleatoria.length; i++){
+
+            if(letraUsuario == palavraAleatoria[i]){
+                arrayPalavraOcultada[i] = letraUsuario
+                console.log(arrayPalavraOcultada)
+            }
+        }
+    }
+
+    palavraOcultada = arrayPalavraOcultada.join("")
+    console.log(palavraOcultada)
+}
+
+const selecionarLetras = (event) => {
+    var textoPalavra = document.querySelector(".palavra-oculta");
+
+    letraUsuario = event.target.value;
+    
+    console.log(letraUsuario);
+    verificarLetras()
+    textoPalavra.innerHTML = palavraOcultada
 }
 
 const jogo = () => {
     escolherPalavras(palavras);
     ocultarPalavra();
-    var textoPalavra = document.querySelector(".palavraOculta");
+
+    var textoPalavra = document.querySelector(".palavra-oculta");
     var textoDica = document.querySelector(".dica");
 
     textoPalavra.innerHTML = palavraOcultada;
+
     textoDica.innerHTML = dica;
 }
+
+const botoesLetras = document.querySelectorAll(".letras");
+
+botoesLetras.forEach(botao => {
+    botao.addEventListener("click", selecionarLetras);
+});
 
 document.querySelector(".comecar").addEventListener("click", jogo);

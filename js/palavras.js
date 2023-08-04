@@ -1,11 +1,11 @@
 const palavras = {
     frutas: {
-        lista: ["Limão", "Laranja", "Tomate", "Uva", "Melancia", "Fruta-Pão"],
+        lista: ["limão", "laranja", "tomate", "uva", "Melancia", "Fruta-Pão"],
         dica: "A dica é uma fruta!"
     },
 
     carros: {
-        lista: ["Corsel", "Corolla", "Fusca", "Chevette"],
+        lista: ["corsel", "corolla", "fusca", "chevette"],
         dica: "A dica é um tipo de carro!"
     }
 }
